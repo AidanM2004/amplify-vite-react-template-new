@@ -2,7 +2,7 @@ import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
 function App() {
-  const { user, signOut } = useAuthenticator();
+  const { user} = useAuthenticator();
 
   return (
     <Authenticator socialProviders={['google']}>
