@@ -5,13 +5,15 @@ import { Authenticator } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import outputs from "../amplify_outputs.json";
 import '@aws-amplify/ui-react/styles.css';
+import 'aws-amplify/auth/enable-oauth-listener';
+
 
 // Configure Amplify with the backend details from amplify_outputs.json
 Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Authenticator socialProviders={['google']}>
+    <Authenticator>
       {({ signOut, user }) => (
         <main>
           <h1>
